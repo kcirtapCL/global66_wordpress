@@ -1,0 +1,24 @@
+* {
+  -webkit-font-feature-settings: "liga" 0;
+  -moz-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-base font-body font-normal relative;
+}
+
+.text-indent {
+  text-indent: -9999px;
+}
+
+span.icon-global {
+  background-image: url("images/svg/icon-global66.svg");
+  @apply w-12 h-6 inline-block bg-no-repeat bg-center bg-contain;
+}

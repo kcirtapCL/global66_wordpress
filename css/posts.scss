@@ -1,0 +1,37 @@
+article {
+  &.post {
+    .content {
+      h2 {
+        @apply pt-24 pb-5 text-3xl leading-tight;
+
+        &:nth-child(1) {
+          @apply pt-0;
+        }
+      }
+
+      h3 {
+        @apply pt-8 pb-5 text-2xl leading-tight;
+      }
+
+      p:not(.number) {
+        @apply mb-4;
+      }
+    }
+  }
+}
+
+.related {
+  .overflow-related {
+    @apply relative;
+
+    &::before {
+      content: "";
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 60%);
+      background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 60%);
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 60%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
+      @apply inset-0 w-full h-full absolute;
+    }
+  }
+}

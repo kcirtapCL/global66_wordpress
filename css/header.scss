@@ -1,0 +1,50 @@
+.main-menu, .main-account {
+  @apply flex flex-row items-center space-x-5;
+
+  li {
+    &.signup {
+      a {
+        @apply block font-semibold text-neutral-12 bg-neutral-3 px-5 py-2 rounded-lg;
+
+        &:hover {
+          @apply text-neutral-12 bg-neutral-4;
+        }
+      }
+    }
+
+    a {
+      @apply font-semibold text-neutral-5 uppercase transition-all duration-200 ease-in-out;
+
+      &:hover {
+        @apply text-neutral-7;
+      }
+    }
+  }
+}
+
+.dropdown {
+  ul.active {
+    @apply w-44 h-auto;
+  }
+}
+
+.selector-page {
+  a {
+    @apply flex-1 text-neutral-5 hover:text-neutral-12 border-b-2 border-solid border-neutral-5 text-center relative transition-all duration-200 ease-in-out;
+
+    &::after {
+      content: "";
+      @apply w-0 h-0.5 absolute bg-neutral-12 absolute -bottom-0.5 left-1/2 transform transition-all duration-200 -translate-x-1/2;
+    }
+
+    &:hover {
+      &::after {
+        @apply w-full;
+      }
+    }
+
+    &.menu-active {
+      @apply text-neutral-12 border-neutral-12;
+    }
+  }
+}
