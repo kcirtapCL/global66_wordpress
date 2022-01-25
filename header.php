@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head() ?>
 </head>
-<body <?php body_class() ?> data-base="<?php echo get_bloginfo('url') ?>">
+<body <?php body_class() ?> data-base="<?php echo get_bloginfo( 'url' ) ?>">
 <?php wp_body_open() ?>
 <header class="top-12 inset-x-0 mx-auto absolute z-50">
     <div class="container mx-auto">
@@ -19,7 +19,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-01', 'menu_class' => 'main-menu' ) ); ?>
             </div>
             <div class="flex flex-row items-center space-x-5">
-	            <?php wp_nav_menu( array( 'theme_location' => 'menu-02', 'menu_class' => 'main-account' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-02', 'menu_class' => 'main-account' ) ); ?>
                 <ul>
                     <li>
 						<?php $translations = pll_the_languages( array( 'raw' => 1 ) ) ?>

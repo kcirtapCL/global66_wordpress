@@ -10,7 +10,8 @@ module.exports = {
             },
             boxShadow: {
                 1: "10px 30px 90px rgba(39, 70, 199, .1)",
-                2: "0 2px 10px rgba(0, 0, 0, .04)"
+                2: "0 2px 10px rgba(0, 0, 0, .04)",
+                3: "0 5px 17px rgba(52, 62, 104, .2)"
             },
             transitionProperty: {
                 maxHeight: "max-height"

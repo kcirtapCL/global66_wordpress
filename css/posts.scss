@@ -22,8 +22,6 @@ article {
 
 .related {
   .overflow-related {
-    @apply relative;
-
     &::before {
       content: "";
       background: rgb(255,255,255);

@@ -1,42 +1,18 @@
 .search-form {
-  @apply flex flex-col w-full relative;
-
-  .fa-search {
-    @apply text-primary-4;
-  }
-
   .fa-times {
-    @apply text-primary-4 opacity-0;
-
     &.active {
       @apply opacity-100;
     }
   }
 
   #results-query {
-    @apply w-4/5 h-48 opacity-0 inset-x-0 mx-auto absolute transition-all duration-200 ease-in-out overflow-hidden;
-
     &.active {
       @apply opacity-100;
     }
 
     .main-content {
-      @apply w-full h-full relative;
-
       .content {
-        @apply w-full h-full bg-neutral-12 rounded-b-lg absolute overflow-y-auto;
-
-        .fa-spinner {
-          @apply hidden text-neutral-3 text-center transition-all duration-200 ease-in-out;
-
-          &.active {
-            @apply block;
-          }
-        }
-
         ul {
-          @apply py-2;
-
           li {
             @apply px-4 py-2 leading-tight transition-all duration-200 ease-in-out;
 
@@ -52,10 +28,6 @@
               @apply font-bold text-neutral-3 text-center;
             }
           }
-        }
-
-        a.load-more {
-          @apply font-bold text-neutral-3 text-center;
         }
       }
     }

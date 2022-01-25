@@ -20361,6 +20361,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-3{
+  --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-sm{
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -20408,6 +20413,11 @@ video {
 
 .group:hover .group-hover\:shadow-2{
   --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.group:hover .group-hover\:shadow-3{
+  --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -20461,6 +20471,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus-within\:shadow-3:focus-within{
+  --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .focus-within\:shadow-sm:focus-within{
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -20511,6 +20526,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.hover\:shadow-3:hover{
+  --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .hover\:shadow-sm:hover{
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -20558,6 +20578,11 @@ video {
 
 .focus\:shadow-2:focus{
   --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus\:shadow-3:focus{
+  --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -22553,31 +22578,6 @@ span.icon-global{
   width: 11rem
 }
 
-.selector-page a{
-  position: relative;
-  flex: 1 1 0%;
-  border-bottom-width: 2px;
-  border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgba(154, 165, 211, var(--tw-border-opacity));
-  text-align: center;
-  --tw-text-opacity: 1;
-  color: rgba(154, 165, 211, var(--tw-text-opacity))
-}
-
-.selector-page a:hover{
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
-.selector-page a{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .selector-page a::after{
   content:"";
   position: absolute;
@@ -22607,92 +22607,12 @@ span.icon-global{
   width: 100%
 }
 
-.selector-page a.menu-active{
-  --tw-border-opacity: 1;
-  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity))
-}
-
-.search-form{
-  position: relative;
-  display: flex;
-  width: 100%;
-  flex-direction: column
-}
-
-.search-form .fa-search{
-  --tw-text-opacity: 1;
-  color: rgba(63, 94, 223, var(--tw-text-opacity))
-}
-
-.search-form .fa-times{
-  --tw-text-opacity: 1;
-  color: rgba(63, 94, 223, var(--tw-text-opacity));
-  opacity: 0
-}
-
 .search-form .fa-times.active{
   opacity: 1
 }
 
-.search-form #results-query{
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 12rem;
-  width: 80%;
-  overflow: hidden;
-  opacity: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-
 .search-form #results-query.active{
   opacity: 1
-}
-
-.search-form #results-query .main-content{
-  position: relative;
-  height: 100%;
-  width: 100%
-}
-
-.search-form #results-query .main-content .content{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
-}
-
-.search-form #results-query .main-content .content .fa-spinner{
-  display: none;
-  text-align: center;
-  --tw-text-opacity: 1;
-  color: rgba(93, 110, 181, var(--tw-text-opacity));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-
-.search-form #results-query .main-content .content .fa-spinner.active{
-  display: block
-}
-
-.search-form #results-query .main-content .content ul{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem
 }
 
 .search-form #results-query .main-content .content ul li{
@@ -22728,13 +22648,6 @@ span.icon-global{
   color: rgba(93, 110, 181, var(--tw-text-opacity))
 }
 
-.search-form #results-query .main-content .content a.load-more{
-  text-align: center;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(93, 110, 181, var(--tw-text-opacity))
-}
-
 article.post .content h2{
   padding-top: 6rem;
   padding-bottom: 1.25rem;
@@ -22757,10 +22670,6 @@ article.post .content h3{
 
 article.post .content p:not(.number){
   margin-bottom: 1rem
-}
-
-.related .overflow-related{
-  position: relative
 }
 
 .related .overflow-related::before{
@@ -42485,6 +42394,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .sm\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .sm\:shadow-sm{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -42532,6 +42446,11 @@ article.post .content p:not(.number){
 
   .group:hover .sm\:group-hover\:shadow-2{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .group:hover .sm\:group-hover\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -42585,6 +42504,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .sm\:focus-within\:shadow-3:focus-within{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .sm\:focus-within\:shadow-sm:focus-within{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -42635,6 +42559,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .sm\:hover\:shadow-3:hover{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .sm\:hover\:shadow-sm:hover{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -42682,6 +42611,11 @@ article.post .content p:not(.number){
 
   .sm\:focus\:shadow-2:focus{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .sm\:focus\:shadow-3:focus{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -64290,6 +64224,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .md\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .md\:shadow-sm{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -64337,6 +64276,11 @@ article.post .content p:not(.number){
 
   .group:hover .md\:group-hover\:shadow-2{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .group:hover .md\:group-hover\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -64390,6 +64334,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .md\:focus-within\:shadow-3:focus-within{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .md\:focus-within\:shadow-sm:focus-within{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -64440,6 +64389,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .md\:hover\:shadow-3:hover{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .md\:hover\:shadow-sm:hover{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -64487,6 +64441,11 @@ article.post .content p:not(.number){
 
   .md\:focus\:shadow-2:focus{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .md\:focus\:shadow-3:focus{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -86095,6 +86054,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .lg\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .lg\:shadow-sm{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -86142,6 +86106,11 @@ article.post .content p:not(.number){
 
   .group:hover .lg\:group-hover\:shadow-2{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .group:hover .lg\:group-hover\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -86195,6 +86164,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .lg\:focus-within\:shadow-3:focus-within{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .lg\:focus-within\:shadow-sm:focus-within{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -86245,6 +86219,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .lg\:hover\:shadow-3:hover{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .lg\:hover\:shadow-sm:hover{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -86292,6 +86271,11 @@ article.post .content p:not(.number){
 
   .lg\:focus\:shadow-2:focus{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .lg\:focus\:shadow-3:focus{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -107900,6 +107884,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .xl\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .xl\:shadow-sm{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -107947,6 +107936,11 @@ article.post .content p:not(.number){
 
   .group:hover .xl\:group-hover\:shadow-2{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .group:hover .xl\:group-hover\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -108000,6 +107994,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .xl\:focus-within\:shadow-3:focus-within{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .xl\:focus-within\:shadow-sm:focus-within{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -108050,6 +108049,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .xl\:hover\:shadow-3:hover{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .xl\:hover\:shadow-sm:hover{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -108097,6 +108101,11 @@ article.post .content p:not(.number){
 
   .xl\:focus\:shadow-2:focus{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .xl\:focus\:shadow-3:focus{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -129705,6 +129714,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .\32xl\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .\32xl\:shadow-sm{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -129752,6 +129766,11 @@ article.post .content p:not(.number){
 
   .group:hover .\32xl\:group-hover\:shadow-2{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .group:hover .\32xl\:group-hover\:shadow-3{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -129805,6 +129824,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .\32xl\:focus-within\:shadow-3:focus-within{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .\32xl\:focus-within\:shadow-sm:focus-within{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -129855,6 +129879,11 @@ article.post .content p:not(.number){
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
+  .\32xl\:hover\:shadow-3:hover{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .\32xl\:hover\:shadow-sm:hover{
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -129902,6 +129931,11 @@ article.post .content p:not(.number){
 
   .\32xl\:focus\:shadow-2:focus{
     --tw-shadow: 0 2px 10px rgba(0, 0, 0, .04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  .\32xl\:focus\:shadow-3:focus{
+    --tw-shadow: 0 5px 17px rgba(52, 62, 104, .2);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
