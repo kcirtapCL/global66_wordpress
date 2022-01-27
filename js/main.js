@@ -82,18 +82,35 @@
 
 	/** CATEGORY FILTER **/
 	$("ul.category-filter li a").on("click", function(event) {
+		const THERE = $(this);
 		const DATASET = event.target.dataset;
-		const CATEGORY = DATASET.category.split("/");
-		let category_id = CATEGORY[2];
-		let category_slug = CATEGORY[3];
+		const CATEGORY = DATASET.category.split("/")[2];
+		const TARGET = $("#app-custom");
+
+		$("ul.category-filter li").removeClass("active");
+		THERE.parent().addClass("active");
 
 		window.location.hash = DATASET.category;
-		let execute = xhrCategory(category_id);
+
+		let execute = xhrCategory(CATEGORY);
+		execute.addEventListener("progress", function(event) {
+			console.log(event);
+		});
 
 		execute.addEventListener("load", function(event) {
-			let response = JSON.parse(event.target.responseText);
-			console.log(response);
+			TARGET.html(event.target.responseText);
 		});
+	});
+	/** ---------- **/
+
+	/** PAGINATION **/
+
+	$("ul.pagination li a").on("click", "a.more-page", function(event) {
+		pagination(event);
+	});
+
+	$("#all-posts").on("click", "a.more-page", function(event) {
+		pagination(event);
 	});
 
 	/** ---------- **/
@@ -111,10 +128,44 @@
 		return xhr;
 	}
 
-	function xhrCategory(category, page = 1) {
+	function xhrCategory(category) {
 		let xhr = new XMLHttpRequest();
-		xhr.open("GET", `${BASE}/wp-json/wp/v2/posts?categories=${category}&page=${page}&order=desc&orderby=date`, true);
-		xhr.send(null);
+		xhr.open("POST", `${BASE}/wp-admin/admin-ajax.php`, true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(`action=categories&category_id=${category}`);
 		return xhr;
+	}
+
+	function xhrAllPosts(category, page) {
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", `${BASE}/wp-admin/admin-ajax.php`, true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(`action=pagination&category_id=${category}&next_page=${page}`);
+		return xhr;
+	}
+
+	function pagination(event) {
+		const DATASET = event.target.dataset;
+		const CATEGORY = DATASET.category;
+		const NEXT_PAGE = DATASET.page;
+		const TARGET = $("#all-posts");
+
+		console.log(DATASET);
+
+		let actual_hash = window.location.hash;
+		let decode_hash = actual_hash.split("/");
+		if (decode_hash.includes("page")) {
+			let index = decode_hash.indexOf("page");
+			decode_hash[index + 1] = NEXT_PAGE;
+
+			window.location.hash = decode_hash.join("/");
+		} else {
+			window.location.hash = `${actual_hash}/page/${NEXT_PAGE}`;
+		}
+
+		let execute = xhrAllPosts(CATEGORY, NEXT_PAGE);
+		execute.addEventListener("load", function(event) {
+			TARGET.html(event.target.responseText);
+		});
 	}
 })();

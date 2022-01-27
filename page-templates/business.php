@@ -3,7 +3,8 @@
  * Template name: Business page
  */
 
-get_header()
-?>
+get_header();
 
-<p>LOREM IPSUM 2</p>
+get_template_part( 'template-parts/base/main' );
+
+get_footer();

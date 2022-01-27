@@ -10,7 +10,7 @@
 <?php wp_body_open() ?>
 <header class="top-12 inset-x-0 mx-auto absolute z-50">
     <div class="container mx-auto">
-        <div class="flex flex-row items-center justify-around">
+        <div class="flex flex-row items-center justify-between">
             <div class="flex flex-row items-center space-x-10">
                 <div>
                     <a href="<?php echo esc_url( home_url( '/' ) ) ?>"

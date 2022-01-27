@@ -82,6 +82,11 @@ function special_nav_class( $classes, $item ) {
 	return $classes;
 }
 
+add_filter( 'excerpt_length', 'custom_excerpt' );
+function custom_excerpt(): int {
+	return 24;
+}
+
 // https://developer.wordpress.org/reference/hooks/wp_mail_content_type/
 function wpdocs_set_html_mail_content_type(): string {
 	return 'text/html';
@@ -93,6 +98,22 @@ function thumbnail_post( $post_id ) {
 	}
 
 	return get_template_directory_uri() . '/images/default-thumbnail.png';
+}
+
+function child_categories( $post_id, $limit = 0 ): array {
+	$child_category    = [];
+	$parent_categories = wp_get_post_categories( $post_id );
+
+	foreach ( $parent_categories as $category ):
+		$decode           = get_category( $category );
+		$child_category[] = (object) array(
+			'id'          => $decode->term_id,
+			'name'        => $decode->name,
+			'description' => $decode->description
+		);
+	endforeach;
+
+	return $limit !== 0 ? array_slice( $child_category, 0, $limit ) : $child_category;
 }
 
 function reading_time(): string {
@@ -127,9 +148,22 @@ function social_network(): WP_Query {
 		'post_type'   => 'redes_sociales',
 		'post_status' => 'publish',
 		'meta_key'    => 'order',
-		'orderby'     => 'meta_value',
-		'order'       => 'ASC'
+		'order'       => 'ASC',
+		'orderby'     => 'meta_value'
 	) );
+}
+
+function get_paginated_links( $query ): array {
+	$currentPage = max( 1, get_query_var( 'paged', 1 ) );
+	$pages       = range( 1, max( 1, $query->max_num_pages ) );
+
+	return array_map( function ( $page ) use ( $currentPage ) {
+		return ( object ) array(
+			"isCurrent" => $page == $currentPage,
+			"page"      => $page,
+			"url"       => get_pagenum_link( $page )
+		);
+	}, $pages );
 }
 
 /************ POST TEMPLATE ************/
@@ -155,7 +189,6 @@ function single_template( $single ) {
 
 	return $single;
 }
-
 
 /************ CUSTOM ADMIN ************/
 add_action( 'admin_enqueue_scripts', 'admin_style' );
@@ -202,6 +235,25 @@ function acf_init_block_number_text() {
 }
 
 /************ QUERY'S ************/
+add_action( 'wp_ajax_categories', 'ajax_categories' );
+add_action( 'wp_ajax_nopriv_categories', 'ajax_categories' );
+function ajax_categories() {
+	$query = $_POST;
+	set_query_var( 'category', $query['category_id'] );
+	get_template_part( 'template-parts/categories' );
+	wp_die();
+}
+
+add_action( 'wp_ajax_pagination', 'ajax_pagination' );
+add_action( 'wp_ajax_nopriv_pagination', 'ajax_pagination' );
+function ajax_pagination() {
+	$query = $_POST;
+
+	set_query_var( 'category', $query['category_id'] );
+	set_query_var( 'paged', $query['next_page'] );
+	get_template_part( 'template-parts/all_posts' );
+	wp_die();
+}
 
 /************ RESET STRING ************/
 function clean_string( $string ): string {

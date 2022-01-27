@@ -22648,6 +22648,25 @@ span.icon-global{
   color: rgba(93, 110, 181, var(--tw-text-opacity))
 }
 
+ul.category-filter li a{
+  border-radius: 9999px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 200ms
+}
+
+ul.category-filter li.active a{
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 182, 130, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
 article.post .content h2{
   padding-top: 6rem;
   padding-bottom: 1.25rem;
