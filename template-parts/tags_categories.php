@@ -23,12 +23,12 @@ $child_categories = get_categories(
 ?>
 <ul class="category-filter flex flex-row items-center justify-center space-x-12">
     <li class="active">
-        <a href="javascript:void(0)" data-category="#/category/<?php echo $actual_parent ?>/home" class="text-neutral-1">Inicio</a>
+        <span class="text-neutral-1">Inicio</span>
     </li>
 	<?php
 	foreach ( $child_categories as $childCat ):
 		echo '<li>';
-		echo '<a href="javascript:void(0);" data-category="#/category/' . $childCat->term_id . '/' . $childCat->category_nicename . '" class="text-neutral-1">' . $childCat->name . '</a>';
+		echo '<a href="' . get_category_link( $childCat->term_id ) . '" target="_self" class="text-neutral-1">' . $childCat->name . ' - ' . $childCat->term_id . '</a>';
 		echo '</li>';
 	endforeach;
 	?>

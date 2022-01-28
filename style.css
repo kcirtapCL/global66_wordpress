@@ -22648,7 +22648,7 @@ span.icon-global{
   color: rgba(93, 110, 181, var(--tw-text-opacity))
 }
 
-ul.category-filter li a{
+ul.category-filter li span, ul.category-filter li a{
   border-radius: 9999px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -22657,10 +22657,10 @@ ul.category-filter li a{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  transition-duration: 200ms
+  transition-duration: 200ms;
 }
 
-ul.category-filter li.active a{
+ul.category-filter li.active span{
   --tw-bg-opacity: 1;
   background-color: rgba(0, 182, 130, var(--tw-bg-opacity));
   --tw-text-opacity: 1;

@@ -1,5 +1,5 @@
 <?php
-$active_menu = is_singular() ? get_the_ID() : 0;
+$active = active_selector();;
 $pages_menu  = new WP_Query(
 	array(
 		'page_name'   => 'personas,empresas',
@@ -16,7 +16,7 @@ $pages_menu  = new WP_Query(
 		if ( $pages_menu->have_posts() ):
 			while ( $pages_menu->have_posts() ): $pages_menu->the_post(); ?>
                 <a href="<?php the_permalink() ?>" target="_self"
-                   class="<?php echo $active_menu === get_the_ID() ? 'text-neutral-12 border-neutral-12' : 'text-neutral-5 hover:text-neutral-12 border-neutral-5' ?> flex-1 border-b-2 border-solid text-center relative transition-all duration-200 ease-in-out"><?php the_title() ?></a>
+                   class="<?php echo $active === get_the_ID() ? 'text-neutral-12 border-neutral-12' : 'text-neutral-5 hover:text-neutral-12 border-neutral-5' ?> flex-1 border-b-2 border-solid text-center relative transition-all duration-200 ease-in-out"><?php the_title() ?></a>
 			<?php
 			endwhile;
 			wp_reset_postdata();

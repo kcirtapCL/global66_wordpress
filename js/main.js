@@ -80,29 +80,6 @@
 	});
 	/** ---------- **/
 
-	/** CATEGORY FILTER **/
-	$("ul.category-filter li a").on("click", function(event) {
-		const THERE = $(this);
-		const DATASET = event.target.dataset;
-		const CATEGORY = DATASET.category.split("/")[2];
-		const TARGET = $("#app-custom");
-
-		$("ul.category-filter li").removeClass("active");
-		THERE.parent().addClass("active");
-
-		window.location.hash = DATASET.category;
-
-		let execute = xhrCategory(CATEGORY);
-		execute.addEventListener("progress", function(event) {
-			console.log(event);
-		});
-
-		execute.addEventListener("load", function(event) {
-			TARGET.html(event.target.responseText);
-		});
-	});
-	/** ---------- **/
-
 	/** PAGINATION **/
 
 	$("ul.pagination li a").on("click", "a.more-page", function(event) {
@@ -125,22 +102,6 @@
 		let xhr = new XMLHttpRequest();
 		xhr.open("GET", `${BASE}/wp-json/wp/v2/search?search=${term}&page=${page}`, true);
 		xhr.send(null);
-		return xhr;
-	}
-
-	function xhrCategory(category) {
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", `${BASE}/wp-admin/admin-ajax.php`, true);
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.send(`action=categories&category_id=${category}`);
-		return xhr;
-	}
-
-	function xhrAllPosts(category, page) {
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", `${BASE}/wp-admin/admin-ajax.php`, true);
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.send(`action=pagination&category_id=${category}&next_page=${page}`);
 		return xhr;
 	}
 

@@ -166,8 +166,7 @@ $query = new WP_Query(
         </div>
     </div>
 </section>
-
-<!--<section class="py-12">
+<section class="py-12">
     <div class="py-12 min-h-full h-100 relative bg-no-repeat bg-center bg-cover"
          style="background-image: url('http://localhost/Global66-Wordpress/wp-content/uploads/2022/01/main_personal.jpg')">
         <div class="container mx-auto">
@@ -190,8 +189,7 @@ $query = new WP_Query(
             </div>
         </div>
     </div>
-</section>-->
-
+</section>
 <div id="all-posts">
 	<?php get_template_part( 'template-parts/all_posts' ); ?>
 </div>

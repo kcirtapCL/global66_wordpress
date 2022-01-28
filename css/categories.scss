@@ -1,11 +1,11 @@
 ul.category-filter {
   li {
-    a {
+    span, a {
       @apply px-4 py-2 rounded-full transition-all duration-200;
     }
 
     &.active {
-      a {
+      span {
         @apply bg-accent-1 text-neutral-12;
       }
     }
