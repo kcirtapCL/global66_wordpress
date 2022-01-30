@@ -1,3 +1,15 @@
+body {
+  &.single-post {
+    header {
+      .container {
+        > div {
+          @apply pb-12 border-b border-solid border-neutral-5;
+        }
+      }
+    }
+  }
+}
+
 .main-menu, .main-account {
   @apply flex flex-row items-center space-x-5;
 

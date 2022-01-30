@@ -80,18 +80,6 @@
 	});
 	/** ---------- **/
 
-	/** PAGINATION **/
-
-	$("ul.pagination li a").on("click", "a.more-page", function(event) {
-		pagination(event);
-	});
-
-	$("#all-posts").on("click", "a.more-page", function(event) {
-		pagination(event);
-	});
-
-	/** ---------- **/
-
 	function xhrSearch(term, page = 1) {
 		if (term.length === 0) {
 			targetList.removeClass("active");
@@ -103,30 +91,5 @@
 		xhr.open("GET", `${BASE}/wp-json/wp/v2/search?search=${term}&page=${page}`, true);
 		xhr.send(null);
 		return xhr;
-	}
-
-	function pagination(event) {
-		const DATASET = event.target.dataset;
-		const CATEGORY = DATASET.category;
-		const NEXT_PAGE = DATASET.page;
-		const TARGET = $("#all-posts");
-
-		console.log(DATASET);
-
-		let actual_hash = window.location.hash;
-		let decode_hash = actual_hash.split("/");
-		if (decode_hash.includes("page")) {
-			let index = decode_hash.indexOf("page");
-			decode_hash[index + 1] = NEXT_PAGE;
-
-			window.location.hash = decode_hash.join("/");
-		} else {
-			window.location.hash = `${actual_hash}/page/${NEXT_PAGE}`;
-		}
-
-		let execute = xhrAllPosts(CATEGORY, NEXT_PAGE);
-		execute.addEventListener("load", function(event) {
-			TARGET.html(event.target.responseText);
-		});
 	}
 })();

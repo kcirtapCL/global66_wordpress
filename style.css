@@ -22523,6 +22523,14 @@ span.icon-global{
   background-repeat: no-repeat
 }
 
+body.single-post header .container>div{
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgba(154, 165, 211, var(--tw-border-opacity));
+  padding-bottom: 3rem
+}
+
 .main-menu, .main-account{
   display: flex;
   flex-direction: row;

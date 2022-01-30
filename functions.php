@@ -110,7 +110,6 @@ function special_nav_class( $classes, $item ) {
 	return $classes;
 }
 
-
 /**
  * @return int
  */
@@ -266,6 +265,11 @@ function get_paginated_links( $query ): array {
 	}, $pages );
 }
 
+/**
+ * @param $data
+ *
+ * @return void
+ */
 function console_log( $data ) {
 	echo "<pre>";
 	var_dump( $data );

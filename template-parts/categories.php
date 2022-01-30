@@ -168,7 +168,7 @@ $query = new WP_Query(
 </section>
 <section class="py-12">
     <div class="py-12 min-h-full h-100 relative bg-no-repeat bg-center bg-cover"
-         style="background-image: url('http://localhost/Global66-Wordpress/wp-content/uploads/2022/01/main_personal.jpg')">
+         style="background-image: url('#')">
         <div class="container mx-auto">
             <div class="flex flex-row justify-end space-x-2">
                 <a href="#"
@@ -184,7 +184,7 @@ $query = new WP_Query(
                 </div>
                 <div class="space-y-9">
                     <p class="text-neutral-12 font-alternate font-bold text-5xl leading-tight">TITULO</p>
-                    <p class="text-neutral-12 font-medium text-lg">DESCRIPCION</p>
+                    <p class="text-neutral-12 font-medium text-lg">DESCRIPCIÓN</p>
                 </div>
             </div>
         </div>

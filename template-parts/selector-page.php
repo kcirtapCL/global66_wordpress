@@ -1,5 +1,5 @@
 <?php
-$active = active_selector();;
+$active = active_selector();
 $pages_menu  = new WP_Query(
 	array(
 		'page_name'   => 'personas,empresas',
