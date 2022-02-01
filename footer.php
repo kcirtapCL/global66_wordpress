@@ -1,3 +1,13 @@
+<?php
+$social_network = new WP_Query(
+	array(
+		'post_type' => 'redes_sociales',
+		'meta_key'  => 'order',
+		'order'     => 'ASC',
+		'orderby'   => 'meta_value'
+	)
+);
+?>
 <footer>
     <div class="bg-neutral-1 py-12">
         <div class="container mx-auto">
@@ -9,8 +19,7 @@
                         <path d="M42.4276 24.5374C42.1402 21.2136 39.3284 18.6035 35.8976 18.6035C33.687 18.6035 31.7329 19.6896 30.548 21.3493C29.8495 22.3303 29.4118 23.5039 29.3499 24.787C29.3455 24.8878 29.3411 24.9929 29.3411 25.0936C29.3411 27.3664 27.4842 29.2057 25.1941 29.2057C25.1897 29.2057 25.1897 29.2057 25.1897 29.2057H25.1852C22.8995 29.2057 21.0383 27.3664 21.0383 25.0936C21.0383 24.9929 21.0338 24.8878 21.0294 24.787C20.9719 23.5039 20.5342 22.3303 19.8313 21.3493C18.6597 19.6896 16.7056 18.6035 14.495 18.6035C11.0642 18.6035 8.25242 21.2136 7.96505 24.5374C7.96505 24.5374 7.94294 24.8045 7.94736 24.8702C7.99157 25.4877 8.50442 25.9826 9.14106 25.9826C9.80865 25.9826 10.3215 25.4395 10.3436 24.7914C10.4232 23.7272 10.9139 22.7769 11.6567 22.0938C12.4038 21.4106 13.3986 20.9902 14.4906 20.9902C16.6746 20.9902 18.4652 22.6675 18.6243 24.7914L18.642 25.1242C18.6464 26.5125 19.0885 27.7912 19.8401 28.8422C21.025 30.502 22.9835 31.588 25.1897 31.588C25.1941 31.588 25.1941 31.588 25.1941 31.588H25.1985C27.4046 31.588 29.3632 30.502 30.548 28.8422C31.2996 27.7912 31.7417 26.5125 31.7462 25.1242L31.7639 24.7914C31.923 22.6631 33.7136 20.9902 35.8976 20.9902C36.9896 20.9902 37.9888 21.4106 38.7315 22.0938C39.4743 22.7769 39.965 23.7272 40.0446 24.7914C40.0711 25.4395 40.584 25.9826 41.2471 25.9826C41.8838 25.9826 42.3966 25.4921 42.4408 24.8702C42.4497 24.8045 42.4276 24.5374 42.4276 24.5374Z"
                               fill="#475694" stroke="#475694" stroke-width="0.5"/>
                     </svg>
-                    <p class="text-3xl lg:text-4xl font-alternate font-bold text-neutral-12 leading-none my-8 text-center lg:m-0 lg:ml-6">
-                        fácil, rápido y económico.</p>
+                    <p class="text-3xl lg:text-4xl font-alternate font-bold text-neutral-12 leading-none my-8 text-center lg:m-0 lg:ml-6"><?php echo get_configurations( "slogan" ) ?></p>
                 </div>
                 <a href="https://transferencias.global66.com/signIn"
                    class="block bg-accent-2 rounded-md font-semibold text-neutral-12 text-lg px-12 py-4 transition-all duration-300 ease-in-out hover:bg-accent-4"
@@ -126,34 +135,14 @@
             </div>
             <div class="flex flex-row items-center justify-between pt-8">
                 <div>
-                    <p class="font-semibold text-14 text-neutral-12 text-opacity-50 uppercase mb-3 lg:mb-5">Follow
-                        us</p>
+                    <p class="font-semibold text-14 text-neutral-12 text-opacity-50 uppercase mb-3 lg:mb-5">Follow us</p>
                     <ul class="list-none mb-6 space-x-1">
-                        <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
-                            <a href="https://www.facebook.com/soyglobal66/" target="_self" rel="nofollow noreferrer"
-                               class="facebook-icon w-10 h-10 block bg-no-repeat bg-center"
-                               style="text-indent:-9999px;background-image: url('<?php echo get_template_directory_uri() ?>/images/social-network/facebook.svg')">Facebook</a>
-                        </li>
-                        <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
-                            <a href="https://twitter.com/teamGlobal66/" target="_self" rel="nofollow noreferrer"
-                               class="twitter-icon w-10 h-10 block bg-no-repeat bg-center"
-                               style="text-indent:-9999px;background-image: url('<?php echo get_template_directory_uri() ?>/images/social-network/twitter.svg')">Twitter</a>
-                        </li>
-                        <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
-                            <a href="https://www.linkedin.com/company/global66/" target="_self"
-                               rel="nofollow noreferrer" class="linkedin-icon w-10 h-10 block bg-no-repeat bg-center"
-                               style="text-indent:-9999px;background-image: url('<?php echo get_template_directory_uri() ?>/images/social-network/linkedin.svg')">LinkedIn</a>
-                        </li>
-                        <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
-                            <a href="https://instagram.com/global_66/" target="_self" rel="nofollow noreferrer"
-                               class="instagram-icon w-10 h-10 block bg-no-repeat bg-center"
-                               style="text-indent:-9999px;background-image: url('<?php echo get_template_directory_uri() ?>/images/social-network/instagram.svg')">Instagram</a>
-                        </li>
-                        <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
-                            <a href="https://www.youtube.com/channel/UCnnlY4UcEaA57nE1MclkT6A/" target="_self"
-                               rel="nofollow noreferrer" class="youtube-icon w-10 h-10 block bg-no-repeat bg-center"
-                               style="text-indent:-9999px;background-image: url('<?php echo get_template_directory_uri() ?>/images/social-network/youtube.svg')">YouTube</a>
-                        </li>
+		                <?php if ( $social_network->have_posts() ): while ( $social_network->have_posts() ): $social_network->the_post(); ?>
+                            <li class="inline-flex bg-neutral-12 hover:bg-gray-8 rounded-lg hover:rounded-none transition-all duration-300 ease-in-out">
+                                <a href="<?php echo get_field( "website" ) ?>" target="_blank" rel="nofollow noreferrer"
+                                   class="w-10 h-10 text-2xl flex items-center justify-center text-neutral-2"><?php echo get_field( "icon" ) ?></a>
+                            </li>
+		                <?php endwhile; endif; wp_reset_query(); ?>
                     </ul>
                 </div>
                 <div>

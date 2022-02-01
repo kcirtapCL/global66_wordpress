@@ -22523,7 +22523,11 @@ span.icon-global{
   background-repeat: no-repeat
 }
 
-body.single-post header .container>div{
+body.single-post header .main-logo{
+  background-image:url("images/svg/global66-logo.svg")
+}
+
+body.single-post header .border-posts{
   border-bottom-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
@@ -22531,19 +22535,30 @@ body.single-post header .container>div{
   padding-bottom: 3rem
 }
 
-.main-menu, .main-account{
+header .main-logo{
+  background-image:url("images/svg/global66-logo_white.svg");
+  text-indent:-9999px;
+  display: block;
+  height: 2.5rem;
+  width: 10rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+header .main-menu, header .main-account{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.main-menu > :not([hidden]) ~ :not([hidden]), .main-account > :not([hidden]) ~ :not([hidden]){
+header .main-menu > :not([hidden]) ~ :not([hidden]), header .main-account > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.main-menu li.signup a, .main-account li.signup a{
+header .main-menu li.signup a, header .main-account li.signup a{
   display: block;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -22557,14 +22572,14 @@ body.single-post header .container>div{
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
-.main-menu li.signup a:hover, .main-account li.signup a:hover{
+header .main-menu li.signup a:hover, header .main-account li.signup a:hover{
   --tw-bg-opacity: 1;
   background-color: rgba(139, 151, 203, var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
-.main-menu li a, .main-account li a{
+header .main-menu li a, header .main-account li a{
   font-weight: 600;
   text-transform: uppercase;
   --tw-text-opacity: 1;
@@ -22576,7 +22591,7 @@ body.single-post header .container>div{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.main-menu li a:hover, .main-account li a:hover{
+header .main-menu li a:hover, header .main-account li a:hover{
   --tw-text-opacity: 1;
   color: rgba(215, 220, 240, var(--tw-text-opacity));
 }

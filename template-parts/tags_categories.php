@@ -1,6 +1,5 @@
 <?php
-$actual_parent = 0;
-$main_category = get_categories(
+$parents = get_categories(
 	array(
 		'parent'     => 0,
 		'hide_empty' => false,
@@ -8,29 +7,42 @@ $main_category = get_categories(
 	)
 );
 
-foreach ( $main_category as $mainCat ):
-	if ( get_post()->post_title === $mainCat->name ) {
-		$actual_parent = $mainCat->term_id;
-		break;
-	}
-endforeach;
-
-$child_categories = get_categories(
+$actual   = get_category( get_query_var( "cat" ) );
+$children = get_categories(
 	array(
-		'parent' => $actual_parent
+		'parent'     => $actual->parent,
+		'hide_empty' => false
 	)
 );
+
+if ( is_singular() ) {
+	$current_page_id    = get_the_ID();
+	$current_page_title = get_the_title();
+
+	foreach ( $parents as $parent ) {
+		if ( $parent->name === $current_page_title ) {
+			$actual = $parent;
+			break;
+		}
+	}
+	$children = get_categories(
+		array(
+			'parent'     => $actual->term_id,
+			'hide_empty' => false
+		)
+	);
+}
 ?>
 <ul class="category-filter flex flex-row items-center justify-center space-x-12">
-    <li class="active">
-        <span class="text-neutral-1">Inicio</span>
-    </li>
-	<?php
-	foreach ( $child_categories as $childCat ):
-		echo '<li>';
-		echo '<a href="' . get_category_link( $childCat->term_id ) . '" target="_self" class="text-neutral-1">' . $childCat->name . ' - ' . $childCat->term_id . '</a>';
-		echo '</li>';
-	endforeach;
-	?>
+	<?php foreach ( $children as $child ): if ( $actual->term_id === $child->term_id ): ?>
+        <li class="active">
+            <span class="text-neutral-1"><?php echo $child->name ?></span>
+        </li>
+	<?php else: ?>
+        <li>
+            <a href="<?php echo get_category_link( $child->term_id ) ?>" target="_self"
+               class="text-neutral-1"><?php echo $child->name ?></a>
+        </li>
+	<?php endif; endforeach; ?>
 </ul>
 

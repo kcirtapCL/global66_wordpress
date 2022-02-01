@@ -41,13 +41,7 @@ $categories = get_the_terms( get_the_ID(), "category" );
 				<?php the_content() ?>
             </div>
             <div class="border-t border-neutral-2 mt-6 pt-6">
-                <p class="font-light italic text-sm">Esta publicación fue creada para entregar información general
-                    sobre el tema descrito en la fecha
-                    de su publicación, la cual puede tener caducidad en ciertos elementos como precios, promociones,
-                    costos u otros elementos de servicio. La información de esta publicación no constituye una
-                    recomendación profesional de tipo legal, impositivo, financiero u otros por parte de Global66.
-                    En virtud de la transparencia, te sugerimos siempre comparar y comprobar por ti mismo cuál es la
-                    mejor alternativa para tus servicios de remesas y transferencias internacionales.</p>
+                <p class="font-light italic text-sm"><?php echo get_configurations("disclaimer") ?></p>
             </div>
         </div>
     </div>

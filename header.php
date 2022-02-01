@@ -10,11 +10,11 @@
 <?php wp_body_open() ?>
 <header class="top-12 inset-x-0 mx-auto absolute z-50">
     <div class="container mx-auto">
-        <div class="flex flex-row items-center justify-between">
+        <div class="border-posts flex flex-row items-center justify-between">
             <div class="flex flex-row items-center space-x-10">
                 <div>
-                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>"
-                       title="<?php echo get_bloginfo( 'name' ) ?>"><?php the_custom_logo() ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo get_bloginfo( 'name' ) ?>"
+                       class="main-logo">Global66</a>
                 </div>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-01', 'menu_class' => 'main-menu' ) ); ?>
             </div>

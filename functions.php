@@ -49,8 +49,8 @@ function one_scripts() {
 	wp_enqueue_style( 'global66', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_style( 'fontAwesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '' );
 
-	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '', true );
-	wp_enqueue_script( 'global66', get_template_directory_uri() . '/js/main.js', array(), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '' );
+	wp_enqueue_script( 'global66', get_template_directory_uri() . '/js/main.js', array(), wp_get_theme()->get( 'Version' ) );
 }
 
 /**
@@ -248,21 +248,15 @@ function decode_category( $category_id, bool $color = true ) {
 }
 
 /**
- * @param $query
+ * @param $field
  *
- * @return array
+ * @return mixed
  */
-function get_paginated_links( $query ): array {
-	$currentPage = max( 1, get_query_var( 'paged', 1 ) );
-	$pages       = range( 1, max( 1, $query->max_num_pages ) );
+function get_configurations( $field = null ) {
+	$current_language   = pll_current_language();
+	$page_configuration = get_page_by_title( "General" )->ID;
 
-	return array_map( function ( $page ) use ( $currentPage ) {
-		return ( object ) array(
-			"isCurrent" => $page == $currentPage,
-			"page"      => $page,
-			"url"       => get_pagenum_link( $page )
-		);
-	}, $pages );
+	return get_field( $current_language, $page_configuration )[ $field ];
 }
 
 /**

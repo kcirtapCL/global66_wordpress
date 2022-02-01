@@ -180,5 +180,6 @@ get_header() ?>
 <div id="all-posts">
 	<?php get_template_part( 'template-parts/all_posts' ); ?>
 </div>
+<?php get_template_part( 'template-parts/social_network' ); ?>
 
 <?php get_footer() ?>

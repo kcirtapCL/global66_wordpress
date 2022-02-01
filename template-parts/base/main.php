@@ -24,7 +24,7 @@
         </div>
     </div>
 </section>
-<div id="app-custom">
-	<?php get_template_part( 'template-parts/categories' ); ?>
-</div>
-<?php get_template_part( 'template-parts/social_network' ); ?>
+<?php get_template_part( 'template-parts/posts/sticky_posts' ); ?>
+<?php get_template_part( 'template-parts/posts/last_posts' ); ?>
+<?php get_template_part( 'template-parts/posts/all_posts' ); ?>
+<?php get_template_part( 'template-parts/slider' ); ?>
