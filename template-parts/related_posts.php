@@ -4,7 +4,7 @@
 		<div class="container mx-auto">
 			<div class="space-y-20">
 				<div class="text-center">
-					<h2 class="font-bold text-4xl text-neutral-2">Contenido relacionado</h2>
+					<h2 class="font-bold text-4xl text-neutral-2"><?php echo get_configurations("related_posts") ?></h2>
 				</div>
 				<div class="grid grid-cols-1 lg:grid-cols-3 grid-flow-row auto-rows-max gap-y-4 lg:gap-y-0 lg:gap-x-24">
 					<?php foreach ($related as $item): ?>
