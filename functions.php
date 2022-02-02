@@ -176,22 +176,12 @@ function reading_time(): string {
 }
 
 /**
- * @return WP_Query
+ * @return mixed|null
  */
-function related_posts(): WP_Query {
+function related_posts() {
 	global $post;
 
-	$tags     = wp_get_post_tags( $post->ID );
-	$tags_IDs = array();
-	foreach ( $tags as $tag ) {
-		$tags_IDs[] = $tag->term_id;
-	}
-
-	return new WP_Query( array(
-		'tag__in'        => $tags_IDs,
-		'post__not_in'   => array( $post->ID ),
-		'posts_per_page' => 3
-	) );
+	return get_field( 'selected_posts', $post->ID );
 }
 
 /**
