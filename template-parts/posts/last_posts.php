@@ -1,5 +1,5 @@
 <?php
-$category = ! empty( get_query_var( 'category' ) ) ? get_query_var( 'category' ) : get_term_by( 'name', $post->post_title, 'category' )->term_id;
+$category = !empty( get_query_var( 'category' ) ) ? get_query_var( 'category' ) : get_term_by( 'name', $post->post_title, 'category' )->term_id;
 $query    = new WP_Query(
 	array(
 		'tax_query'      => array(

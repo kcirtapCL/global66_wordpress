@@ -11,3 +11,15 @@ ul.category-filter {
     }
   }
 }
+
+.list-pagination {
+  @apply flex flex-row items-center justify-center space-x-1;
+
+  a, span {
+    @apply w-8 h-8 block leading-8 text-center text-neutral-12 bg-neutral-1 rounded-sm;
+  }
+
+  span.current {
+    @apply bg-neutral-2 font-bold;
+  }
+}

@@ -221,6 +221,48 @@ function active_selector() {
 }
 
 /**
+ * @param bool $actual
+ *
+ * @return array|int|mixed|object|WP_Error|null
+ */
+function get_general_category( bool $actual = false ) {
+	$actual_category = get_category( get_query_var( "cat" ) );
+	$parents         = get_categories(
+		array(
+			'parent'     => 0,
+			'hide_empty' => false,
+			'exclude'    => array( 1 )
+		)
+	);
+
+	if ( is_singular() ) {
+		$current_page_title = get_the_title();
+
+		foreach ( $parents as $parent ) {
+			if ( $parent->name === $current_page_title ) {
+				$actual_category = $parent;
+			}
+		}
+
+		$children = get_categories(
+			array(
+				'parent'     => $actual_category->term_id,
+				'hide_empty' => true
+			)
+		);
+	} else {
+		$children = get_categories(
+			array(
+				'parent'     => $actual_category->parent,
+				'hide_empty' => true
+			)
+		);
+	}
+
+	return $actual ? $actual_category : $children;
+}
+
+/**
  * @param $category_id
  * @param bool $color
  *
@@ -244,7 +286,7 @@ function decode_category( $category_id, bool $color = true ) {
  */
 function get_configurations( $field = null ) {
 	$current_language   = pll_current_language();
-	$page_configuration = get_page_by_title( "General" )->ID;
+	$page_configuration = get_page_by_title( "Configuración" )->ID;
 
 	return get_field( $current_language, $page_configuration )[ $field ];
 }
@@ -257,7 +299,7 @@ function get_configurations( $field = null ) {
 function console_log( $data ) {
 	echo "<pre>";
 	var_dump( $data );
-	echo "<pre>";
+	echo "</pre>";
 }
 
 /************ POST TEMPLATE ************/

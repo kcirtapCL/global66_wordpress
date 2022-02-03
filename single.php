@@ -47,5 +47,4 @@ $categories = get_the_terms( get_the_ID(), "category" );
     </div>
 </article>
 <?php get_template_part( 'template-parts/related_posts' ); ?>
-<?php get_template_part( 'template-parts/social_network' ); ?>
 <?php get_footer() ?>

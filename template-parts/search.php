@@ -7,15 +7,6 @@
         <i class="fas fa-times reset-form text-primary-4 opacity-0"></i>
     </div>
     <div>
-        <div id="results-query"
-             class="w-4/5 h-48 opacity-0 inset-x-0 mx-auto absolute transition-all duration-200 ease-in-out overflow-hidden">
-            <div class="main-content w-full h-full relative">
-                <div class="content w-full h-full bg-neutral-12 rounded-b-lg absolute overflow-y-auto">
-                    <ul class="py-2"></ul>
-                    <a href="javascript:void(0)" data-search="" data-page=""
-                       class="load-more font-bold text-neutral-3 text-center hidden">ver más</a>
-                </div>
-            </div>
-        </div>
+        <div id="results-query"></div>
     </div>
 </div>

@@ -22690,6 +22690,38 @@ ul.category-filter li.active span{
   color: rgba(255, 255, 255, var(--tw-text-opacity))
 }
 
+.list-pagination{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.list-pagination > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.list-pagination a, .list-pagination span{
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 62, 104, var(--tw-bg-opacity));
+  text-align: center;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.list-pagination span.current{
+  --tw-bg-opacity: 1;
+  background-color: rgba(71, 86, 148, var(--tw-bg-opacity));
+  font-weight: 700
+}
+
 article.post .content h2{
   padding-top: 6rem;
   padding-bottom: 1.25rem;

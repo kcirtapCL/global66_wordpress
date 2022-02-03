@@ -1,28 +1,21 @@
 <?php
-$all_posts = get_posts(
+$all_posts = new WP_Query(
 	array(
-		'tax_query'      => array(
-			array(
-				'taxonomy'         => 'category',
-				'field'            => 'term_id',
-				'terms'            => get_category( get_query_var( 'cat' ) )->parent,
-				'include_children' => true
-			)
-		),
+		'category_name'  => get_general_category( true )->slug,
 		'post_type'      => 'post',
 		'post_status'    => 'publish',
-		'posts_per_page' => 12,
+		'posts_per_page' => get_option( 'posts_per_page' ),
+		'paged'          => get_query_var( 'paged' ),
 		'order'          => 'DESC',
 		'orderby'        => 'date'
 	)
 );
 ?>
-
 <section class="py-10">
     <div class="container mx-auto">
         <div class="space-y-12">
             <div class="grid grid-cols-3 grid-flow-row auto-rows-max gap-10">
-				<?php if ( $all_posts ): foreach ( $all_posts as $post ): setup_postdata( $post ) ?>
+				<?php if ( $all_posts->have_posts() ): while ( $all_posts->have_posts() ): $all_posts->the_post(); ?>
                     <div class="w-full block shadow-3">
                         <div class="w-full h-64 bg-no-repeat bg-center bg-cover relative"
                              style="background-image: url('<?php echo thumbnail_post( get_the_ID() ) ?>')">
@@ -53,8 +46,21 @@ $all_posts = get_posts(
                             </div>
                         </div>
                     </div>
-				<?php endforeach;
-					wp_reset_postdata(); endif; ?>
+				<?php endwhile; ?>
+					<?php wp_reset_postdata(); endif; ?>
+            </div>
+            <div class="list-pagination">
+		        <?php echo paginate_links( array(
+			        'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+			        'format'    => '?paged=%#%',
+			        'total'     => $all_posts->max_num_pages,
+			        'current'   => max( 1, get_query_var( 'paged' ) ),
+			        'show_all'  => false,
+			        'prev_next' => true,
+			        'prev_text' => '<i class="fas fa-angle-double-left"></i>',
+			        'next_text' => '<i class="fas fa-angle-double-right"></i>',
+			        'type'      => 'plain'
+		        ) ); ?>
             </div>
         </div>
     </div>

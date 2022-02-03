@@ -178,7 +178,7 @@ get_header() ?>
     </div>
 </section>
 <div id="all-posts">
-	<?php get_template_part( 'template-parts/all_posts' ); ?>
+	<?php get_template_part( 'template-parts/posts/all_posts' ); ?>
 </div>
 <?php get_template_part( 'template-parts/social_network' ); ?>
 
