@@ -20,7 +20,7 @@ $query    = new WP_Query(
 );
 ?>
 <section class="py-10">
-	<div class="container mx-auto">
+	<div class="container">
 		<div class="flex flex-col space-y-9">
 			<div>
 				<h2 class="text-4xl text-neutral-1 font-bold"><?php echo get_configurations("sticky_post") ?></h2>

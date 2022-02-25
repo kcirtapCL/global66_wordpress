@@ -1,7 +1,7 @@
 <section class="header relative">
     <div class="flex w-full min-h-screen pt-52 bg-no-repeat bg-center bg-cover"
          style="background-image: url(<?php echo get_field( 'background' )['url'] ?>)">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="flex flex-col items-center space-y-14">
                 <div class="w-full max-w-xl">
 					<?php get_template_part( 'template-parts/selector-page' ) ?>
@@ -20,7 +20,7 @@
     </div>
 </section>
 <section class="py-12">
-    <div class="container mx-auto">
+    <div class="container">
         <div>
 			<?php get_template_part( 'template-parts/tags_categories' ); ?>
         </div>

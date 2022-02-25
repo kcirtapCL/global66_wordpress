@@ -19,7 +19,7 @@ $query    = new WP_Query(
 );
 ?>
 <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container">
         <div class="flex flex-col space-y-9">
             <div>
                 <h2 class="text-4xl text-neutral-1 font-bold"><?php echo get_configurations("last_post") ?></h2>
@@ -61,7 +61,7 @@ $query    = new WP_Query(
 <section class="py-12">
     <div class="py-12 min-h-full h-100 relative bg-no-repeat bg-center bg-cover"
          style="background-image: url('#')">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="flex flex-row justify-end space-x-2">
                 <a href="#"
                    class="px-3 py-1 font-alternate font-bold text-sm text-neutral-12 bg-accent-2 rounded-lg">Noticias</a>

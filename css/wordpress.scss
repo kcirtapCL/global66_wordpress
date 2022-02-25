@@ -39,6 +39,8 @@ figure {
   }
 
   &.wp-block-table {
+    @apply my-6;
+
     table {
       @apply text-neutral-2;
 

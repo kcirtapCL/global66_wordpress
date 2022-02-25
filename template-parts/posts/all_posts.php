@@ -12,7 +12,7 @@ $all_posts = new WP_Query(
 );
 ?>
 <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container">
         <div class="space-y-12">
             <div class="grid grid-cols-3 grid-flow-row auto-rows-max gap-10">
 				<?php if ( $all_posts->have_posts() ): while ( $all_posts->have_posts() ): $all_posts->the_post(); ?>

@@ -28,7 +28,7 @@ get_header() ?>
 <section class="header personal">
     <div class="flex w-full min-h-screen pt-52 bg-no-repeat bg-center bg-cover"
          style="background-image: url(<?php echo get_field( 'background', $page_parent )['url'] ?>)">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="flex flex-col items-center space-y-14">
                 <div class="w-full max-w-xl">
 					<?php get_template_part( 'template-parts/selector-page' ) ?>
@@ -45,14 +45,14 @@ get_header() ?>
     </div>
 </section>
 <section class="py-12">
-    <div class="container mx-auto">
+    <div class="container">
         <div>
 			<?php get_template_part( 'template-parts/tags_categories' ); ?>
         </div>
     </div>
 </section>
 <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container">
         <div class="flex flex-col space-y-9">
             <div>
                 <h2 class="text-4xl text-neutral-1 font-bold">Notas destacadas</h2>
@@ -139,7 +139,7 @@ get_header() ?>
     </div>
 </section>
 <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container">
         <div class="flex flex-col space-y-9">
             <div>
                 <h2 class="text-4xl text-neutral-1 font-bold">Última nota</h2>

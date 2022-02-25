@@ -5,7 +5,7 @@ $categories = get_the_terms( get_the_ID(), "category" );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="header">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="pt-48 pb-10 space-y-3">
                 <div class="flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center space-x-4">
@@ -36,7 +36,7 @@ $categories = get_the_terms( get_the_ID(), "category" );
         </div>
     </div>
     <div class="content py-24">
-        <div class="container mx-auto">
+        <div class="container">
             <div>
 				<?php the_content() ?>
             </div>

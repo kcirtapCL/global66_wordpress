@@ -9,7 +9,7 @@
 <body <?php body_class() ?> data-base="<?php echo get_bloginfo( 'url' ) ?>">
 <?php wp_body_open() ?>
 <header class="top-12 inset-x-0 mx-auto absolute z-50">
-    <div class="container mx-auto">
+    <div class="container">
         <div class="border-posts flex flex-row items-center justify-between">
             <div class="flex flex-row items-center space-x-10">
                 <div>

@@ -10,7 +10,7 @@ $social_network = new WP_Query(
 ?>
 <footer>
     <div class="bg-neutral-1 py-12">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="flex flex-col items-center lg:flex-row lg:justify-between">
                 <div class="flex flex-col items-center lg:flex-row">
                     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@ $social_network = new WP_Query(
         </div>
     </div>
     <div class="bg-neutral-2 py-6">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="text-center text-sm text-neutral-12 font-medium">
                 <p>Copyright © <span class="year"></span> Global66.</p>
                 <p>Av. Apoquindo 4615, Of. 701 - Piso 7, Las Condes, Santiago.</p>

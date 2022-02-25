@@ -1,6 +1,6 @@
 <?php if ( related_posts() ): ?>
 	<div class="related py-16">
-		<div class="container mx-auto">
+		<div class="container">
 			<div class="space-y-20">
 				<div class="text-center">
 					<h2 class="font-bold text-4xl text-neutral-2"><?php echo get_configurations("related_posts") ?></h2>
