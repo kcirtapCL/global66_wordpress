@@ -1,4 +1,4 @@
-<section class="header personal">
+<section class="header relative">
     <div class="flex w-full min-h-screen pt-52 bg-no-repeat bg-center bg-cover"
          style="background-image: url(<?php echo get_field( 'background' )['url'] ?>)">
         <div class="container mx-auto">
@@ -15,6 +15,8 @@
                 </div>
             </div>
         </div>
+        <span class="w-8 h-14 mx-auto bg-no-repeat bg-center bg-contain absolute inset-x-0 bottom-6 text-indent animate-bounce"
+              style="background-image: url('<?php echo get_template_directory_uri() ?>/images/svg/icon-scrolldown.svg')">Scroll down</span>
     </div>
 </section>
 <section class="py-12">

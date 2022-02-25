@@ -1,0 +1,82 @@
+.has-text-align-left {
+  @apply text-left;
+}
+
+.has-text-align-center {
+  @apply text-center;
+}
+
+.has-text-align-right {
+  @apply text-right
+}
+
+.has-drop-cap:not(:focus) {
+  &::first-letter {
+    @apply text-7xl font-bold;
+  }
+
+  &::after {
+    content: "";
+    @apply p-0 table;
+  }
+}
+
+.wp-block-quote {
+  @apply text-base mb-7 border-l-4 border-solid pl-4 #{"!important"};
+
+  p:last-child {
+    @apply m-0;
+  }
+
+  cite {
+    @apply block mt-8 text-sm text-neutral-6 font-semibold leading-tight
+  }
+}
+
+figure {
+  &.is-type-video {
+    @apply mt-6 mb-8 max-w-4xl mx-auto;
+  }
+
+  &.wp-block-table {
+    table {
+      @apply text-neutral-2;
+
+      tr {
+        td {
+          @apply border border-solid border-neutral-8;
+        }
+      }
+    }
+
+    figcaption {
+      @apply text-sm text-neutral-2;
+    }
+  }
+}
+
+.gallery {
+  width: calc(100% + 1.6em);
+  @apply flex flex-wrap my-12 -ml-3.5
+}
+
+.gallery-item {
+  @apply w-full my-3.5 px-3.5;
+}
+
+.gallery-caption {
+  @apply block mt-3.5;
+}
+
+.wp-block-code {
+  font-family: monospace;
+  @apply my-4 py-12 px-8 text-sm text-left border-2 border-solid border-neutral-8 leading-tight overflow-auto;
+
+  code, kbd, samp {
+    @apply pt-1.5 pb-2.5 bg-neutral-1 bg-opacity-5 rounded-md;
+  }
+
+  code {
+    @apply py-3.5 px-4 border-neutral-8 bg-transparent;
+  }
+}

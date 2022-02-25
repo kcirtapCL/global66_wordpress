@@ -1,8 +1,5 @@
 module.exports = {
-    purge: [
-        '**/*.php',
-        '*.php'
-    ],
+    content: ["**/*.php", "*.php"],
     theme: {
         extend: {
             height: {
@@ -58,14 +55,12 @@ module.exports = {
             transparent: "transparent"
         },
         container: {
-            padding: {
-                default: "1rem"
-            }
+            center: true,
+            padding: '1rem'
         },
         fontFamily: {
             body: ["Montserrat", "sans-serif"],
             alternate: ["Montserrat Alternates", "sans-serif"]
         }
-    },
-    variants: false,
+    }
 }

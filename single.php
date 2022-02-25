@@ -16,7 +16,7 @@ $categories = get_the_terms( get_the_ID(), "category" );
                     <div class="flex flex-row items-center space-x-4">
                         <p class="read-time font-medium text-neutral-4"><?php echo reading_time() ?></p>
                         <span class="w-8 h-8 block bg-no-repeat bg-center bg-contain"
-                              style="background-image: url('<?php echo get_template_directory_uri() ?>/images/svg/read-time.svg')"></span>
+                              style="background-image: url('<?php echo get_template_directory_uri() ?>/images/svg/icon-read_time.svg')"></span>
                     </div>
                 </div>
                 <div class="space-y-6">
@@ -31,17 +31,17 @@ $categories = get_the_terms( get_the_ID(), "category" );
             </div>
         </div>
         <div>
-                <span class="w-full pb-96 block max-h-96 bg-no-repeat bg-center bg-cover text-indent"
-                      style="background-image: url(<?php echo thumbnail_post( get_the_ID() ) ?>)"><?php the_title() ?></span>
+            <span class="w-full pb-96 block max-h-96 bg-no-repeat bg-center bg-cover text-indent"
+                  style="background-image: url(<?php echo thumbnail_post( get_the_ID() ) ?>)"><?php the_title() ?></span>
         </div>
     </div>
-    <div class="content pt-24">
+    <div class="content py-24">
         <div class="container mx-auto">
             <div>
 				<?php the_content() ?>
             </div>
             <div class="border-t border-neutral-2 mt-6 pt-6">
-                <p class="font-light italic text-sm"><?php echo get_configurations("disclaimer") ?></p>
+                <p class="font-light italic text-sm"><?php echo get_configurations( "disclaimer" ) ?></p>
             </div>
         </div>
     </div>

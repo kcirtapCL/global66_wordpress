@@ -20,6 +20,15 @@
 	});
 	/** ---------- **/
 
+	/** SPLIDE **/
+	new Splide(".splide", {
+		type: "loop",
+		perPage: 6,
+		perMove: 1,
+		autoplay: false
+	}).mount()
+	/** ---------- **/
+
 	/**
 	 * SEARCH
 	 * TODO: TEMPORAL FUNCTION > FIND BETTER WAY

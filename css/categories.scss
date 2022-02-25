@@ -1,7 +1,9 @@
 ul.category-filter {
   li {
+    @apply text-center;
+
     span, a {
-      @apply px-4 py-2 rounded-full transition-all duration-200;
+      @apply inline-block px-4 py-2 rounded-full transition-all duration-200 ;
     }
 
     &.active {

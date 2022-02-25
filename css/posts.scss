@@ -1,20 +1,55 @@
 article {
   &.post {
+    .header {
+      h1 {
+        @apply text-4xl font-bold leading-tight;
+      }
+    }
     .content {
-      h2 {
-        @apply pt-24 pb-5 text-3xl leading-tight;
+      h1 {
+        @apply hidden;
+      }
 
-        &:nth-child(1) {
-          @apply pt-0;
-        }
+      h2 {
+        @apply mt-6 mb-3 text-neutral-2 text-3xl font-bold leading-tight;
       }
 
       h3 {
-        @apply pt-8 pb-5 text-2xl leading-tight;
+        @apply my-6 text-neutral-2 text-2xl leading-tight;
+      }
+
+      h4 {
+        @apply text-neutral-2 text-xl;
+      }
+
+      h5 {
+        @apply text-neutral-2 text-lg;
+      }
+
+      h6 {
+        @apply text-neutral-2 text-base;
+      }
+
+      ul {
+        @apply list-disc list-inside space-y-1;
+      }
+
+      em {
+        @apply block pb-4;
       }
 
       p:not(.number) {
-        @apply mb-4;
+        @apply mb-2 text-neutral-2 leading-8;
+      }
+
+      a {
+        @apply text-accent-3 underline italic font-semibold relative;
+
+        &::after {
+          content: "";
+          background-image: url('images/svg/icon-hyperlink.svg');
+          @apply w-3 h-3 ml-1 inline-block bg-no-repeat bg-center bg-contain align-text-top;
+        }
       }
     }
   }
